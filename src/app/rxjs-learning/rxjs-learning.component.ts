@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, from, of } from 'rxjs';
+import { Component, ElementRef, OnInit, ViewChild, viewChild } from '@angular/core';
+import { Observable, from, fromEvent, of } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs-learning',
@@ -7,6 +7,9 @@ import { Observable, from, of } from 'rxjs';
   styleUrl: './rxjs-learning.component.css'
 })
 export class RxjsLearningComponent implements OnInit {
+
+  @ViewChild('validate')
+  validate ?: ElementRef;
 
   // agents ?: Observable<string>;
   // agentName ?: string;
@@ -39,17 +42,24 @@ export class RxjsLearningComponent implements OnInit {
   //   this.agents.subscribe(data => {
   //     this.agentName = data;
   //   })
-  this.students$.subscribe(data => {
-    console.log(data);
-  });
+  // this.students$.subscribe(data => {
+  //   console.log(data);
+  // });
 
-  this.studentName$.subscribe(data => {
-    console.log(data);
-  });
+  // this.studentName$.subscribe(data => {
+  //   console.log(data);
+  // });
 
-  this.orders$.subscribe(data => {
-    console.log(data);
-  });
+  // this.orders$.subscribe(data => {
+  //   console.log(data);
+  // });
+  }
+
+  buttonClicked(){
+    const clickOnserver$ = fromEvent(this.validate?.nativeElement, 'click');
+    clickOnserver$.subscribe(data => {
+      console.log(data);
+    });
   }
 
 }
