@@ -11,6 +11,6 @@ export class SenderComponent {
   constructor(private dataService: DataService) {}
 
   sendData() {
-    this.dataService.sendData('Hello from Sender Component');
+    this.dataService.sendData1('Hello from Sender Component');
   }
 }

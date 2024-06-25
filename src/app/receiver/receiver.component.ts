@@ -13,7 +13,7 @@ export class ReceiverComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.data$.subscribe(data => {
+    this.dataService.data1$.subscribe(data => {
       console.log("Subject")
       this.data = data;
       console.log(this.data)
