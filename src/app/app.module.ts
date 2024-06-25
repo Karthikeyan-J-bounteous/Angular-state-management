@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
+import { UserSearchComponent } from './user-search/user-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RxjsLearningComponent
+    RxjsLearningComponent,
+    UserSearchComponent
   ],
   imports: [
     BrowserModule,

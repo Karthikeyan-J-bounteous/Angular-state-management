@@ -1,0 +1,6 @@
+<input #searchInput type="text" placeholder="Search users">
+<ul>
+    <div *ngIf="users">
+        <li *ngFor="let user in users">{{ user.fullName }}</li>
+    </div>
+</ul>
