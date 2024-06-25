@@ -3,12 +3,12 @@ import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-receiver',
-  template: `
-    <div>Data: {{ data }}</div>
-  `
+  templateUrl: './receiver.component.html',
+  styleUrl: './receiver.component.css'
 })
 export class ReceiverComponent implements OnInit {
   data?: string;
+  data2: number[] = [];
 
   constructor(private dataService: DataService) {}
 
@@ -18,5 +18,9 @@ export class ReceiverComponent implements OnInit {
       this.data = data;
       console.log(this.data)
     });
+
+    this.dataService.getData().subscribe(
+      data => this.data2.push(data)
+    );
   }
 }
